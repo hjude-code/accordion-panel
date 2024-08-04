@@ -11,6 +11,7 @@
   background-color: #21759b;
   color: #fff;
   padding: 2px;
+  flex-grow: 0;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

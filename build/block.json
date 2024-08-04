@@ -6,7 +6,26 @@
   "title": "Accordion Panel",
   "category": "design",
   "supports": {
-    "html": false
+    "html": false,
+    "dimensions": {
+      "minHeight": true
+    },
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+    "position": {
+      "sticky": true
+    },
+    "color": {
+      "background": true,
+      "button": true,
+      "enableContrastChecker": true,
+      "gradients": true,
+      "heading": true,
+      "link": true,
+      "text": true
+    }
   },
   "textdomain": "accordion-panel",
   "editorScript": "file:./index.js",
