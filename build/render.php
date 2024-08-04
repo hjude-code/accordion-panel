@@ -14,6 +14,7 @@
 		<span class="panel-headings">
 			<h2 class="panel-heading panel-heading-close"> <?php echo $panelHeading ?> </h2>
 			<h2 class="panel-heading panel-heading-open"> <?php echo $panelHeading ?> </h2>
+			<h2 class="panel-heading panel-heading-close"> <?php echo $panelHeading ?> </h2>
 		</span>
 		<span class="accordionRule accordionRule-right"></span>
 	</a>

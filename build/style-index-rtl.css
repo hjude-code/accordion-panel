@@ -5,7 +5,7 @@
   flex-grow: 0;
   display: flex;
   --transTime:0.5s;
-  --transEase:cubic-bezier(.92,0,0,.99);
+  --transEase:cubic-bezier(.72,.72,.01,.99);
   transition: flex-grow var(--transTime) var(--transEase);
   position: relative;
 }
@@ -20,7 +20,7 @@
   inset: 0% 0% 0% 0%;
   background-color: #ffffff;
   animation: accordionBg-out var(--transTime) var(--transEase) forwards;
-  animation-delay: calc(var(--transTime) / 2);
+  animation-delay: 0s;
   pointer-events: none !important;
 }
 
@@ -57,19 +57,24 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  transition-delay: var(--transTime);
-  transition: transform var(--transTime) var(--transEase);
-  transform: translateX(0%);
+  transform: translateX(100%);
+  animation: headingsOut var(--transTime) var(--transEase) forwards;
+  animation-delay: 0s;
 }
 
 .wp-block-accordion-panel-accordion-panel:hover .panel-header .panel-headings,
 .wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) .panel-header .panel-headings {
-  transform: translateX(100%);
+  animation: headingsIn var(--transTime) var(--transEase) forwards;
+  animation-delay: 0s !important;
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading {
   grid-area: 1/1/1/1;
   position: relative;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close:last-child {
+  right: 200%;
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open {
@@ -83,6 +88,14 @@
   }
   to {
     transform: translateX(100%);
+  }
+}
+@keyframes headingsOut {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(200%);
   }
 }
 .wp-block-accordion-panel-accordion-panel .panel-content {
@@ -107,7 +120,7 @@
   display: block;
 }
 
-.wp-block-accordion-panel-accordion-panel .accordionRule:is(.accordionRule-left, .accordionRule-right).accordionRule-left {
+.wp-block-accordion-panel-accordion-panel .accordionRule:is(.accordionRule-left, .accordionRule-right) {
   top: 0px;
   height: 100%;
   width: var(--ruleWidth);
@@ -119,6 +132,6 @@
 }
 
 .accordionRule.accordionRule-right {
-  left: 0px;
+  left: 0%;
   transform: translate(-50%);
 }
