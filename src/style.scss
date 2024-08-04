@@ -132,7 +132,7 @@
 	left: 0px;
 	transform: translate(-50%);
 }
-.accordionRule.accordionRule-right{
+.wp-block-accordion-panel-accordion-panel:last-child .accordionRule-right{
 	right: 0%;
 	transform: translate(50%);
 	// background-color: green;
