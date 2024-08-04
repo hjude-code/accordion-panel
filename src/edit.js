@@ -31,11 +31,11 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Accordion Panel – hello from the editor!',
-				'accordion-panel'
-			) }
-		</p>
+		<div { ...useBlockProps() }>
+			<p>Panel Heading</p>
+			<div class="panel-content">
+				<p>content-section</p>
+			</div>
+		</div>
 	);
 }

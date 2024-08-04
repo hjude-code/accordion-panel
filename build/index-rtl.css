@@ -6,6 +6,10 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-accordion-panel-accordion-panel {
-  border: 1px dotted #f00;
+.wp-block-accordion-panel-accordion-panel .panel-content {
+  display: none;
+}
+
+.wp-block-accordion-panel-accordion-panel.is-selected .panel-content {
+  display: block;
 }
