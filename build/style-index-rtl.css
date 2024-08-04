@@ -4,6 +4,7 @@
 .wp-block-accordion-panel-accordion-panel {
   flex-grow: 0;
   display: flex;
+  transition: flex-grow 0.25s;
 }
 
 .wp-block-accordion-panel-accordion-panel.is-panel-open {
@@ -14,7 +15,6 @@
   display: none;
   align-self: stretch;
   width: 0%;
-  background-color: red;
 }
 
 .wp-block-accordion-panel-accordion-panel.is-panel-open .panel-content {

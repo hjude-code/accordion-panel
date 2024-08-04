@@ -1,7 +1,19 @@
-let accordionPanels = document.querySelectorAll('.wp-block-accordion-panel-accordion-panel')
+const accordionGroups = document.querySelectorAll('*:has(>.wp-block-accordion-panel-accordion-panel)')
 
-accordionPanels.forEach((panel)=>{
-    panel.addEventListener('click', ()=>{
-        panel.classList.toggle('is-panel-open')
+accordionGroups.forEach((accordionGroup)=>{
+    const accordionPanels = accordionGroup.querySelectorAll('.wp-block-accordion-panel-accordion-panel')
+
+    let activePanel
+
+    accordionPanels.forEach((panel)=>{
+        const panelHeader = panel.querySelector('.panel-header')
+        panelHeader.addEventListener('click', ()=>{
+            if(activePanel && activePanel !== panel){
+                activePanel.classList.remove('is-panel-open')
+            }
+            panel.classList.toggle('is-panel-open')
+            activePanel = panel
+        })
     })
+
 })

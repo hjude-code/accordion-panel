@@ -4,7 +4,9 @@
  */
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?>>
-	<p>Panel Heading</p>
+	<div class="panel-header">
+		<p>Panel Heading</p>
+	</div>
 	<div class="panel-content">
 		<p>panel content</p>
 	</div>
