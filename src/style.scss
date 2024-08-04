@@ -2,7 +2,7 @@
 	flex-grow: 0;
 	display: flex;
 }
-.wp-block-accordion-panel-accordion-panel:hover{
+.wp-block-accordion-panel-accordion-panel.is-panel-open{
 	flex-grow: 1;
 }
 
@@ -12,7 +12,7 @@
 	width: 0%;
 	background-color: red;
 }
-.wp-block-accordion-panel-accordion-panel:hover .panel-content{
+.wp-block-accordion-panel-accordion-panel.is-panel-open .panel-content{
 	display: block;
 	width: 100%;
 }
