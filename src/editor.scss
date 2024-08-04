@@ -4,7 +4,19 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+ .wp-block-accordion-panel-accordion-panel.is-selected{
+	flex-grow: 0;
+ }
+ .wp-block-accordion-panel-accordion-panel.is-selected.is-selected{
+	flex-grow: 1;
+ }
+ .wp-block-accordion-panel-accordion-panel.is-selected::before{
+	 inset: 0% 0% 0% 0% ; 
+ }
 
+.wp-block-accordion-panel-accordion-panel.is-selected .panel-content{
+	width: 100%;
+}
 .wp-block-accordion-panel-accordion-panel.is-selected .panel-content{
 	display: block;
 }

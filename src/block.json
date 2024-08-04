@@ -25,6 +25,13 @@
 			"heading": true,
 			"link": true,
 			"text": true
+		},
+		"renaming": true
+	},
+	"attributes": {
+		"panel-heading":{
+			"type":"string",
+			"default":"Panel Heading"
 		}
 	},
 	"textdomain": "accordion-panel",

@@ -32,7 +32,12 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<div { ...useBlockProps() }>
-			<p>Panel Heading</p>
+			<div class="panel-header">
+				<span class="accordionRule accordionRule-left"></span>
+				<h2 class="panel-heading panel-heading-close">Panel Heading</h2>
+				<h2 class="panel-heading panel-heading-open">Panel Heading</h2>
+				<span class="accordionRule accordionRule-right"></span>
+			</div>
 			<div class="panel-content">
 				<p>content-section</p>
 			</div>

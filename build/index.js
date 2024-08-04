@@ -54,8 +54,19 @@ __webpack_require__.r(__webpack_exports__);
 function Edit() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      children: "Panel Heading"
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      class: "panel-header",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        class: "accordionRule accordionRule-left"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+        class: "panel-heading panel-heading-close",
+        children: "Panel Heading"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+        class: "panel-heading panel-heading-open",
+        children: "Panel Heading"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        class: "accordionRule accordionRule-right"
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       class: "panel-content",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
@@ -185,7 +196,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"accordion-panel/accordion-panel","version":"0.1.0","title":"Accordion Panel","category":"design","supports":{"html":false,"dimensions":{"minHeight":true},"background":{"backgroundImage":true,"backgroundSize":true},"position":{"sticky":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true}},"textdomain":"accordion-panel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./render.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"accordion-panel/accordion-panel","version":"0.1.0","title":"Accordion Panel","category":"design","supports":{"html":false,"dimensions":{"minHeight":true},"background":{"backgroundImage":true,"backgroundSize":true},"position":{"sticky":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"renaming":true},"attributes":{"panel-heading":{"type":"string","default":"Panel Heading"}},"textdomain":"accordion-panel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./render.js"}');
 
 /***/ })
 

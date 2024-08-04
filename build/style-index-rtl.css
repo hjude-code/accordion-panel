@@ -5,10 +5,58 @@
   flex-grow: 0;
   display: flex;
   transition: flex-grow 0.25s;
+  position: relative;
 }
 
-.wp-block-accordion-panel-accordion-panel.is-panel-open {
+.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) {
   flex-grow: 1;
+}
+
+.wp-block-accordion-panel-accordion-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0% 0% 0% 100%;
+  background-color: #ffffff;
+  transition: inset 0.25s;
+  pointer-events: none;
+}
+
+.wp-block-accordion-panel-accordion-panel:not(.is-panel-open, .is-selected):hover::before,
+.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected)::before {
+  inset: 0% 0% 0% 0%;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  text-decoration: none;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading {
+  grid-area: 1/1/1/1;
+  transition: clip-path 0.25s;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close {
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header:hover .panel-heading-close,
+.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) .panel-heading-close {
+  clip-path: inset(0% 100% 0% 0%);
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open {
+  color: #000000;
+  clip-path: inset(0% 0% 0% 100%);
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header:hover .panel-heading-open,
+.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) .panel-heading-open {
+  clip-path: inset(0% 0% 0% 0%);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-content {
@@ -20,4 +68,31 @@
 .wp-block-accordion-panel-accordion-panel.is-panel-open .panel-content {
   display: block;
   width: 100%;
+}
+
+.wp-block-accordion-panel-accordion-panel *:has(.accordionRule) {
+  position: relative;
+}
+
+.wp-block-accordion-panel-accordion-panel .accordionRule {
+  --ruleWidth:2px;
+  position: absolute;
+  background-color: #000000;
+  display: block;
+}
+
+.wp-block-accordion-panel-accordion-panel .accordionRule:is(.accordionRule-left, .accordionRule-right).accordionRule-left {
+  top: 0px;
+  height: 100%;
+  width: var(--ruleWidth);
+}
+
+.accordionRule.accordionRule-left {
+  right: 0px;
+  transform: translate(50%);
+}
+
+.accordionRule.accordionRule-right {
+  left: 0px;
+  transform: translate(-50%);
 }
