@@ -4,7 +4,9 @@
 .wp-block-accordion-panel-accordion-panel {
   flex-grow: 0;
   display: flex;
-  transition: flex-grow 0.25s;
+  --transTime:0.5s;
+  --transEase:cubic-bezier(.92,0,0,.99);
+  transition: flex-grow var(--transTime) var(--transEase);
   position: relative;
 }
 
@@ -15,50 +17,74 @@
 .wp-block-accordion-panel-accordion-panel::before {
   content: "";
   position: absolute;
-  inset: 0% 0% 0% 100%;
+  inset: 0% 0% 0% 0%;
   background-color: #ffffff;
-  transition: inset 0.25s;
-  pointer-events: none;
+  animation: accordionBg-out var(--transTime) var(--transEase) forwards;
+  animation-delay: calc(var(--transTime) / 2);
+  pointer-events: none !important;
 }
 
 .wp-block-accordion-panel-accordion-panel:not(.is-panel-open, .is-selected):hover::before,
 .wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected)::before {
-  inset: 0% 0% 0% 0%;
+  animation: accordionBg-In var(--transTime) var(--transEase) forwards;
+  animation-delay: 0s !important;
 }
 
+@keyframes accordionBg-In {
+  from {
+    inset: 0% 0% 0% 100%;
+  }
+  to {
+    inset: 0% 0% 0% 0%;
+  }
+}
+@keyframes accordionBg-out {
+  from {
+    inset: 0% 0% 0% 0%;
+  }
+  to {
+    inset: 0% 100% 0% 0%;
+  }
+}
 .wp-block-accordion-panel-accordion-panel .panel-header {
   writing-mode: vertical-lr;
   text-orientation: mixed;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-headings {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  text-decoration: none;
+  transition-delay: var(--transTime);
+  transition: transform var(--transTime) var(--transEase);
+  transform: translateX(0%);
+}
+
+.wp-block-accordion-panel-accordion-panel:hover .panel-header .panel-headings,
+.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) .panel-header .panel-headings {
+  transform: translateX(-100%);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading {
   grid-area: 1/1/1/1;
-  transition: clip-path 0.25s;
-}
-
-.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close {
-  clip-path: inset(0% 0% 0% 0%);
-}
-
-.wp-block-accordion-panel-accordion-panel .panel-header:hover .panel-heading-close,
-.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) .panel-heading-close {
-  clip-path: inset(0% 100% 0% 0%);
+  position: relative;
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open {
   color: #000000;
-  clip-path: inset(0% 0% 0% 100%);
+  left: 100%;
 }
 
-.wp-block-accordion-panel-accordion-panel .panel-header:hover .panel-heading-open,
-.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) .panel-heading-open {
-  clip-path: inset(0% 0% 0% 0%);
+@keyframes headingsIn {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
-
 .wp-block-accordion-panel-accordion-panel .panel-content {
   display: none;
   align-self: stretch;
