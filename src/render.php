@@ -5,5 +5,7 @@
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?>>
 	<p>Panel Heading</p>
-	<div class="panel-content"></div>
+	<div class="panel-content">
+		<p>panel content</p>
+	</div>
 </div>

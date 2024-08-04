@@ -1,13 +1,19 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
-.wp-block-accordion-panel-accordion-panel {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+.wp-block-accordion-panel-accordion-panel{
 	flex-grow: 0;
+	display: flex;
 }
+.wp-block-accordion-panel-accordion-panel:hover{
+	flex-grow: 1;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-content{
+	display: none;
+	align-self: stretch;
+	width: 0%;
+	background-color: red;
+}
+.wp-block-accordion-panel-accordion-panel:hover .panel-content{
+	display: block;
+	width: 100%;
+}
+
