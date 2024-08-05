@@ -7,9 +7,6 @@
 	"category": "design",
 	"supports": {
 		"html": false,
-		"dimensions": {
-			"minHeight": true
-		},
 		"background": {
 			"backgroundImage": true,
 			"backgroundSize": true

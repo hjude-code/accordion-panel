@@ -5,6 +5,7 @@
 	--transEase:cubic-bezier(.72,.72,.01,.99);
 	transition:flex-grow var(--transTime) var(--transEase);
 	position: relative;
+	align-self: stretch;
 }
 .wp-block-accordion-panel-accordion-panel:is(
 	.is-panel-open, .is-selected
