@@ -54,12 +54,13 @@ export default function Edit({attributes, setAttributes}) {
 			</InspectorControls>
 			<div class="panel-header">
 				<span class="accordionRule accordionRule-left"></span>
-				<h2 class="panel-heading panel-heading-close">{attributes.panelHeading}</h2>
-				<h2 class="panel-heading panel-heading-open">{attributes.panelHeading}</h2>
+				<span class="panel-headings">
+						<h2 class="panel-heading">{attributes.panelHeading}</h2>
+				</span>
 				<span class="accordionRule accordionRule-right"></span>
 			</div>
 			<div class="panel-content">
-				<p>content-section</p>
+				<InnerBlocks/>
 			</div>
 		</div>
 	);

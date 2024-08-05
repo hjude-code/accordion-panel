@@ -15,7 +15,7 @@
   flex-direction: column;
 }
 
-.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) {
+.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected, :has(.is-selected)) {
   flex-grow: 1;
 }
 
@@ -35,13 +35,13 @@
   animation-name: accordionBg-Out-vrt;
 }
 
-.wp-block-accordion-panel-accordion-panel:not(.is-panel-open, .is-selected):hover::before,
-.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected)::before {
+.wp-block-accordion-panel-accordion-panel:not(.is-panel-open):hover::before,
+.wp-block-accordion-panel-accordion-panel.is-panel-open::before {
   animation-name: accordionBg-In-hrz;
 }
 
-.is-vertical .wp-block-accordion-panel-accordion-panel:not(.is-panel-open, .is-selected):hover::before,
-.is-vertical .wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected)::before {
+.is-vertical .wp-block-accordion-panel-accordion-panel:not(.is-panel-open):hover::before,
+.is-vertical .wp-block-accordion-panel-accordion-panel.is-panel-open::before {
   animation-name: accordionBg-In-vrt;
 }
 
@@ -106,13 +106,13 @@
   transform: translateY(0%);
 }
 
-.wp-block-accordion-panel-accordion-panel:hover .panel-header .panel-headings,
-.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) .panel-header .panel-headings {
+.wp-block-accordion-panel-accordion-panel:not(.is-panel-open):hover .panel-header .panel-headings,
+.wp-block-accordion-panel-accordion-panel.is-panel-open .panel-header .panel-headings {
   animation-name: headingsIn-hrz;
 }
 
-.is-vertical .wp-block-accordion-panel-accordion-panel:hover .panel-header .panel-headings,
-.is-vertical .wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected) .panel-header .panel-headings {
+.is-vertical .wp-block-accordion-panel-accordion-panel.is-panel-open:hover .panel-header .panel-headings,
+.is-vertical .wp-block-accordion-panel-accordion-panel.is-panel-open .panel-header .panel-headings {
   animation-name: headingsIn-vrt;
 }
 
