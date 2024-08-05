@@ -31,8 +31,16 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({attributes, setAttributes}) {
+
+	const styleVars = {
+		'--ruleColor': attributes.ruleColor,
+		'--panelHeadingColorClose': attributes.panelHeadingColorClose,
+		'--panelHeadingColorOpen': attributes.panelHeadingColorOpen,
+		'--panelBgColor': attributes.panelBgColor,
+	}
+
 	return (
-		<div { ...useBlockProps() }>
+		<div { ...useBlockProps({style: styleVars}) }>
 			<InspectorControls>
 				<PanelBody>
 					<PanelRow>

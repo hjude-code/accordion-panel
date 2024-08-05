@@ -15,7 +15,6 @@
 			"sticky": true
 		},
 		"color": {
-			"background": true,
 			"button": true,
 			"enableContrastChecker": true,
 			"gradients": true,
@@ -23,13 +22,28 @@
 			"link": true,
 			"text": true
 		},
-		"renaming": true,
-		"inserter": true
+		"renaming": true
 	},
 	"attributes": {
 		"panelHeading":{
 			"type":"string",
 			"default":"Panel Heading"
+		},
+		"ruleColor":{
+			"type":"string",
+			"default":"#000000"
+		},
+		"panelHeadingColorClose":{
+			"type":"string",
+			"default":"#ffffff"
+		},
+		"panelHeadingColorOpen":{
+			"type":"string",
+			"default":"#000000"
+		},
+		"panelBgColor":{
+			"type":"string",
+			"default":"#ffffff"
 		}
 	},
 	"textdomain": "accordion-panel",
