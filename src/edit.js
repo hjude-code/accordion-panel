@@ -11,8 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks, InspectorControls } from '@wordpress/block-editor';
-import { PanelRow, PanelBody, SelectControl, TextControl, ColorPicker} from '@wordpress/components';
+import { useBlockProps, InnerBlocks, InspectorControls, useSetting } from '@wordpress/block-editor';
+import {Card, CardBody, CardHeader, Heading, CardMedia, PanelRow, Panel, PanelBody, PanelHeader, TextControl, ColorPicker, ColorPalette} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -42,15 +42,55 @@ export default function Edit({attributes, setAttributes}) {
 	return (
 		<div { ...useBlockProps({style: styleVars}) }>
 			<InspectorControls>
-				<PanelBody>
-					<PanelRow>
-						<TextControl
-							label="Panel Heading"
-							value={ attributes.panelHeading }
-							onChange={ ( newHeading ) => setAttributes({panelHeading:newHeading}) }
-						/>
-					</PanelRow>
-				</PanelBody>
+				<Panel header="Controls">
+					<PanelBody title="Panel Heading" initialOpen={ true }>
+						<PanelRow>
+							<TextControl
+								label="Panel Heading Text"
+								value={ attributes.panelHeading }
+								onChange={ ( newHeading ) => setAttributes({panelHeading:newHeading}) }
+							/>
+						</PanelRow>
+					</PanelBody>
+					<PanelBody title="Panel Background Color" initialOpen={ false }>
+						<PanelRow>
+							<ColorPalette
+								header="Panel Background Color"
+								label="Panel Background Color"
+								value={ attributes.panelBgColor }
+								colors={[...useSetting('color.palette')]}
+								onChange={ ( newColor ) => setAttributes({panelBgColor:newColor}) }
+							/>
+						</PanelRow>
+					</PanelBody>
+					<PanelBody title="Panel Heading Color - Open" initialOpen={ false }>
+						<PanelRow>
+							<ColorPalette
+								value={ attributes.panelHeadingColorOpen }
+								colors={[...useSetting('color.palette')]}
+								onChange={ ( newColor ) => setAttributes({panelHeadingColorOpen:newColor}) }
+							/>
+						</PanelRow>
+					</PanelBody>
+					<PanelBody title="Panel Heading Color - Closed" initialOpen={ false }>
+						<PanelRow>
+							<ColorPalette
+								value={ attributes.panelHeadingColorClose }
+								colors={[...useSetting('color.palette')]}
+								onChange={ ( newColor ) => setAttributes({panelHeadingColorClose:newColor}) }
+							/>
+						</PanelRow>
+					</PanelBody>
+					<PanelBody title="Rules" initialOpen={ false }>
+						<PanelRow>
+							<ColorPalette
+								value={ attributes.ruleColor }
+								colors={[...useSetting('color.palette')]}
+								onChange={ ( newColor ) => setAttributes({ruleColor:newColor}) }
+							/>
+						</PanelRow>
+					</PanelBody>
+				</Panel>
 			</InspectorControls>
 			<div class="panel-header">
 				<span class="accordionRule accordionRule-left"></span>
