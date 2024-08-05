@@ -40,6 +40,7 @@
 	grid-area: 1/1/1/1;
 	position: relative;
 	transition: transform calc(var(--transTime)/1) cubic-bezier(.33,0,.02,.99);
+	padding:1em 0;
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading *{

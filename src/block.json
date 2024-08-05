@@ -20,7 +20,8 @@
 			"gradients": true,
 			"heading": true,
 			"link": true,
-			"text": true
+			"text": true,
+			"background": true
 		},
 		"renaming": true
 	},
