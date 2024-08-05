@@ -20,64 +20,6 @@
   flex-grow: 1;
 }
 
-.wp-block-accordion-panel-accordion-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0% 0% 0% 0%;
-  background-color: #ffffff;
-  animation-name: accordionBg-Out-hrz;
-  animation-duration: var(--transTime);
-  animation-timing-function: var(--transEase);
-  animation-fill-mode: forwards;
-  pointer-events: none !important;
-}
-
-.is-vertical > .wp-block-accordion-panel-accordion-panel::before {
-  animation-name: accordionBg-Out-vrt;
-}
-
-.wp-block-accordion-panel-accordion-panel:not(.is-panel-open):hover::before,
-.wp-block-accordion-panel-accordion-panel.is-panel-open::before {
-  animation-name: accordionBg-In-hrz;
-}
-
-.is-vertical .wp-block-accordion-panel-accordion-panel:not(.is-panel-open):hover::before,
-.is-vertical .wp-block-accordion-panel-accordion-panel.is-panel-open::before {
-  animation-name: accordionBg-In-vrt;
-}
-
-@keyframes accordionBg-In-hrz {
-  from {
-    inset: 0% 0% 0% 100%;
-  }
-  to {
-    inset: 0% 0% 0% 0%;
-  }
-}
-@keyframes accordionBg-Out-hrz {
-  from {
-    inset: 0% 0% 0% 0%;
-  }
-  to {
-    inset: 0% 100% 0% 0%;
-  }
-}
-@keyframes accordionBg-In-vrt {
-  from {
-    inset: 100% 0% 0% 0%;
-  }
-  to {
-    inset: 0% 0% 0% 0%;
-  }
-}
-@keyframes accordionBg-Out-vrt {
-  from {
-    inset: 0% 0% 0% 0%;
-  }
-  to {
-    inset: 0% 0% 100% 0%;
-  }
-}
 .wp-block-accordion-panel-accordion-panel .panel-header {
   text-decoration: none;
   overflow: hidden;
@@ -92,29 +34,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  animation-name: headingsOut-hrz;
-  animation-duration: var(--transTime);
-  animation-timing-function: var(--transEase);
-  animation-fill-mode: forwards;
-}
-
-:not(.is-vertical) .wp-block-accordion-panel-accordion-panel .panel-header .panel-headings {
-  transform: translateX(-100%);
-}
-
-.is-vertical .wp-block-accordion-panel-accordion-panel .panel-header .panel-headings {
-  animation-name: headingsOut-vrt;
-  transform: translateY(0%);
-}
-
-.wp-block-accordion-panel-accordion-panel:not(.is-panel-open):hover .panel-header .panel-headings,
-.wp-block-accordion-panel-accordion-panel.is-panel-open .panel-header .panel-headings {
-  animation-name: headingsIn-hrz;
-}
-
-.is-vertical .wp-block-accordion-panel-accordion-panel.is-panel-open:hover .panel-header .panel-headings,
-.is-vertical .wp-block-accordion-panel-accordion-panel.is-panel-open .panel-header .panel-headings {
-  animation-name: headingsIn-vrt;
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading {
@@ -122,63 +41,12 @@
   position: relative;
 }
 
-.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close {
-  color: #ffffff;
-}
-
-:not(.is-vertical) > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close:last-child {
-  left: 200%;
-}
-
-.is-vertical > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close:last-child {
-  top: 200%;
-}
-
-:not(.is-vertical) > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open {
-  left: 100%;
-}
-
-.is-vertical > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open {
-  top: 100%;
-}
-
-@keyframes headingsIn-hrz {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-@keyframes headingsOut-hrz {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(-200%);
-  }
-}
-@keyframes headingsIn-vrt {
-  from {
-    transform: translateY(0%);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
-@keyframes headingsOut-vrt {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(-200%);
-  }
-}
 .wp-block-accordion-panel-accordion-panel .panel {
   width: 0px;
   overflow: hidden;
   z-index: 2;
   transition: var(--transTime) var(--transEase);
+  background-color: var(--panelBgColor);
 }
 
 .wp-block-accordion-panel-accordion-panel.is-panel-open .panel {
@@ -202,7 +70,7 @@
 .wp-block-accordion-panel-accordion-panel .accordionRule {
   --ruleWidth:2px;
   position: absolute;
-  background-color: #000000;
+  background-color: var(--ruleColor);
   display: block;
 }
 

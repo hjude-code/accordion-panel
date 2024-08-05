@@ -4,17 +4,37 @@
  */
 
  $panelHeading = $attributes['panelHeading'];
+
+$styleString = '';
+
+$panelBgColor = $attributes['panelBgColor'];
+$styleString .= "--panelBgColor: $panelBgColor; ";
+
+$panelHeadingColorClose = $attributes['panelHeadingColorClose'];
+$styleString .= "--panelHeadingColorClose: $panelHeadingColorClose; ";
+
+$panelHeadingColorOpen = $attributes['panelHeadingColorOpen'];
+$styleString .= "--panelHeadingColorOpen: $panelHeadingColorOpen; ";
+
+$ruleColor = $attributes['ruleColor'];
+$styleString .= "--ruleColor: $ruleColor; ";
+
+
+
+ $wrapper_attributes = get_block_wrapper_attributes([
+	'style' => $styleString
+]);
 ?>
 
 
 
-<div <?php echo get_block_wrapper_attributes(); ?>>
+<div <?php echo $wrapper_attributes ?>>
 	<a class="panel-header">
 		<span class="accordionRule accordionRule-left"></span>
 		<span class="panel-headings">
-			<h2 class="panel-heading panel-heading-close"> <?php echo $panelHeading ?> </h2>
-			<h2 class="panel-heading panel-heading-open"> <?php echo $panelHeading ?> </h2>
-			<h2 class="panel-heading panel-heading-close"> <?php echo $panelHeading ?> </h2>
+			<span class="panel-heading"> <h2> <?php echo $panelHeading ?> </h2> </span>
+			<span class="panel-heading"> <h2> <?php echo $panelHeading ?> </h2> </span>
+			<span class="panel-heading"> <h2> <?php echo $panelHeading ?> </h2> </span>
 		</span>
 		<span class="accordionRule accordionRule-right"></span>
 	</a>

@@ -8,18 +8,16 @@
 	transition: 0s !important;
  }
 
-
- .wp-block-accordion-panel-accordion-panel::before{
-	animation: none !important;
-	inset: 0% 0% 100% 0% !important;
-	transition: 0s !important;
-	
-}
  .wp-block-accordion-panel-accordion-panel:is(
 	.is-selected, :has(.is-selected)
-)::before{
-	 animation: none !important;
-	 inset: 0% 0% 0% 0% !important;
+){
+	background-color: var(--panelBgColor);
+}
+
+
+ .wp-block-accordion-panel-accordion-panel::before{
+	display: none !important;
+	
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-headings{
@@ -46,5 +44,5 @@
 	width: 100%;
 	transition: 0s !important;
 	display: block;
-	
+
 }

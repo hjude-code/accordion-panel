@@ -10,15 +10,12 @@
   transition: 0s !important;
 }
 
-.wp-block-accordion-panel-accordion-panel::before {
-  animation: none !important;
-  inset: 0% 0% 100% 0% !important;
-  transition: 0s !important;
+.wp-block-accordion-panel-accordion-panel:is(.is-selected, :has(.is-selected)) {
+  background-color: var(--panelBgColor);
 }
 
-.wp-block-accordion-panel-accordion-panel:is(.is-selected, :has(.is-selected))::before {
-  animation: none !important;
-  inset: 0% 0% 0% 0% !important;
+.wp-block-accordion-panel-accordion-panel::before {
+  display: none !important;
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-headings {
