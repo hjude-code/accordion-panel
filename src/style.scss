@@ -32,29 +32,7 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
-	// animation-name: headingsOut-hrz;
-	// animation-duration: var(--transTime);
-	// animation-timing-function: var(--transEase);
-	// animation-fill-mode: forwards;
 }
-
-// :not(.is-vertical) .wp-block-accordion-panel-accordion-panel .panel-header .panel-headings{
-// 	transform:translateX(-100%);
-// }
-// .is-vertical .wp-block-accordion-panel-accordion-panel .panel-header .panel-headings{
-// 	animation-name: headingsOut-vrt;
-// 	transform:translateY(0%);
-// }
-
-// .wp-block-accordion-panel-accordion-panel:not(.is-panel-open):hover .panel-header .panel-headings,
-// .wp-block-accordion-panel-accordion-panel.is-panel-open .panel-header .panel-headings{
-// 	animation-name: headingsIn-hrz;
-// }
-
-// .is-vertical .wp-block-accordion-panel-accordion-panel.is-panel-open:hover .panel-header .panel-headings,
-// .is-vertical .wp-block-accordion-panel-accordion-panel.is-panel-open .panel-header .panel-headings{
-// 	animation-name: headingsIn-vrt;
-// }
 
 // Panel Heading
 
@@ -89,39 +67,6 @@
 	transform: translate(0, 0%);
 }
 
-// @keyframes headingsIn-hrz {
-// 	from{
-// 		transform: translateX(0%);
-// 	}
-// 	to{
-// 		transform: translateX(-100%);
-// 	}
-// }
-// @keyframes headingsOut-hrz {
-// 	from{
-// 		transform: translateX(-100%);
-// 	}
-// 	to{
-// 		transform: translateX(-200%);
-// 	}
-// }
-// @keyframes headingsIn-vrt {
-// 	from{
-// 		transform: translateY(0%);
-// 	}
-// 	to{
-// 		transform: translateY(-100%);
-// 	}
-// }
-// @keyframes headingsOut-vrt {
-// 	from{
-// 		transform: translateY(-100%);
-// 	}
-// 	to{
-// 		transform: translateY(-200%);
-// 	}
-// }
-
 
 // Panel
 
@@ -131,6 +76,7 @@
 	z-index: 2;
 	transition: var(--transTime) var(--transEase);
 	background-color: var(--panelBgColor);
+	flex-grow: 0;
 }
 .wp-block-accordion-panel-accordion-panel.is-panel-open .panel{
 	flex-grow: 1;
@@ -139,7 +85,6 @@
 // Panel Content
 
 .wp-block-accordion-panel-accordion-panel .panel-content{
-
 	align-self: stretch;
 	width: var(--availContentW);
 

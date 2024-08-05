@@ -55,12 +55,14 @@ export default function Edit({attributes, setAttributes}) {
 			<div class="panel-header">
 				<span class="accordionRule accordionRule-left"></span>
 				<span class="panel-headings">
-						<h2 class="panel-heading">{attributes.panelHeading}</h2>
+						<span class="panel-heading"><h2 >{attributes.panelHeading}</h2></span>
 				</span>
 				<span class="accordionRule accordionRule-right"></span>
 			</div>
-			<div class="panel-content">
-				<InnerBlocks/>
+			<div class="panel">
+				<div class="panel-content">
+					<InnerBlocks/>
+				</div>
 			</div>
 		</div>
 	);
