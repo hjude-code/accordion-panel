@@ -38,6 +38,7 @@ export default function Edit({attributes, setAttributes}) {
 		'--panelHeadingColorOpen': attributes.panelHeadingColorOpen,
 		'--panelBgColor': attributes.panelBgColor,
 		'--headerAlignment': attributes.headerAlignment,
+		'--maxPanelHeight': attributes.maxPanelHeight
 	}
 
 	const panelHeadingTag = `<${attributes.headingTagName}>${attributes.panelHeading}</${attributes.headingTagName}>`

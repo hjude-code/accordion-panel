@@ -24,6 +24,9 @@ $styleString .= "--ruleColor: $ruleColor; ";
 $headerAlignment = $attributes['headerAlignment'];
 $styleString .= "--headerAlignment: $headerAlignment; ";
 
+$maxPanelHeight = $attributes['maxPanelHeight'];
+$styleString .= "--maxPanelHeight: $maxPanelHeight; ";
+
 
 
  $wrapper_attributes = get_block_wrapper_attributes([

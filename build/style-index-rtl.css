@@ -77,7 +77,9 @@
 
 .wp-block-accordion-panel-accordion-panel .panel {
   width: 0px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: var(--maxPanelHeight);
   z-index: 2;
   transition: var(--transTime) var(--transEase);
   background-color: var(--panelBgColor);
@@ -105,14 +107,14 @@
 }
 
 .wp-block-accordion-panel-accordion-panel .accordionRule {
-  --ruleWidth:2px;
+  --ruleWidth:4px;
   position: absolute;
   background-color: var(--ruleColor);
   display: block;
   z-index: 2;
   height: 100%;
   width: var(--ruleWidth);
-  --ruleInset:calc(var(--ruleWidth)/-2) ;
+  --ruleInset:calc(var(--ruleWidth)/-2);
 }
 
 .is-vertical > .wp-block-accordion-panel-accordion-panel .accordionRule {

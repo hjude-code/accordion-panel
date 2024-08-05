@@ -53,6 +53,10 @@
     "headingTagName": {
       "type": "string",
       "default": "h2"
+    },
+    "maxPanelHeight": {
+      "type": "string",
+      "default": "100vh"
     }
   },
   "textdomain": "accordion-panel",
