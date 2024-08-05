@@ -9,6 +9,7 @@
   transition: flex-grow var(--transTime) var(--transEase);
   position: relative;
   align-self: stretch;
+  overflow: hidden;
 }
 
 .is-vertical > .wp-block-accordion-panel-accordion-panel {
@@ -173,15 +174,25 @@
     transform: translateY(-200%);
   }
 }
+.wp-block-accordion-panel-accordion-panel .panel {
+  width: 0px;
+  overflow: hidden;
+  z-index: 2;
+  transition: var(--transTime) var(--transEase);
+}
+
+.wp-block-accordion-panel-accordion-panel.is-panel-open .panel {
+  flex-grow: 1;
+}
+
 .wp-block-accordion-panel-accordion-panel .panel-content {
-  display: none;
   align-self: stretch;
-  width: 0%;
+  width: var(--availContentW);
 }
 
 .wp-block-accordion-panel-accordion-panel.is-panel-open .panel-content {
   display: block;
-  width: 100%;
+  flex-grow: 1;
 }
 
 .wp-block-accordion-panel-accordion-panel *:has(.accordionRule) {

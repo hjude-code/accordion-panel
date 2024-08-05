@@ -18,7 +18,9 @@
 		</span>
 		<span class="accordionRule accordionRule-right"></span>
 	</a>
-	<div class="panel-content">
-		<?php echo $content ?>
+	<div class="panel">
+		<div class="panel-content">
+			<?php echo $content ?>
+		</div>
 	</div>
 </div>

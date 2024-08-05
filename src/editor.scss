@@ -37,10 +37,14 @@
 }
 
 
+.wp-block-accordion-panel-accordion-panel .panel-content{
+	display: none;
+}
 .wp-block-accordion-panel-accordion-panel:is(
 	.is-selected, :has(.is-selected)
 ) .panel-content{
 	width: 100%;
 	transition: 0s !important;
 	display: block;
+	
 }
