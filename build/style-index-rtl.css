@@ -121,12 +121,16 @@
   position: relative;
 }
 
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close {
+  color: #ffffff;
+}
+
 :not(.is-vertical) > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close:last-child {
   right: 200%;
 }
 
 .is-vertical > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close:last-child {
-  top: -200%;
+  top: 200%;
 }
 
 :not(.is-vertical) > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open {
@@ -134,7 +138,7 @@
 }
 
 .is-vertical > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open {
-  top: -100%;
+  top: 100%;
 }
 
 @keyframes headingsIn-hrz {
@@ -163,7 +167,7 @@
 }
 @keyframes headingsOut-vrt {
   from {
-    transform: translateY(100%);
+    transform: translateY(-100%);
   }
   to {
     transform: translateY(-200%);

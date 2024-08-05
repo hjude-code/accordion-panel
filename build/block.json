@@ -23,7 +23,8 @@
       "link": true,
       "text": true
     },
-    "renaming": true
+    "renaming": true,
+    "inserter": true
   },
   "attributes": {
     "panel-heading": {

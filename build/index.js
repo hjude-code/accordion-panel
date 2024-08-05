@@ -196,7 +196,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"accordion-panel/accordion-panel","version":"0.1.0","title":"Accordion Panel","category":"design","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"position":{"sticky":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"renaming":true},"attributes":{"panel-heading":{"type":"string","default":"Panel Heading"}},"textdomain":"accordion-panel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./render.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"accordion-panel/accordion-panel","version":"0.1.0","title":"Accordion Panel","category":"design","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"position":{"sticky":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"renaming":true,"inserter":true},"attributes":{"panel-heading":{"type":"string","default":"Panel Heading"}},"textdomain":"accordion-panel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./render.js"}');
 
 /***/ })
 
