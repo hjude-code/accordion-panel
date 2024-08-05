@@ -16,7 +16,7 @@
   flex-direction: column;
 }
 
-.wp-block-accordion-panel-accordion-panel:is(.is-panel-open, .is-selected, :has(.is-selected)) {
+.wp-block-accordion-panel-accordion-panel.is-panel-open {
   flex-grow: 1;
 }
 
