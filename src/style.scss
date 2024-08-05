@@ -23,7 +23,7 @@
 }
 :not(.is-vertical)>.wp-block-accordion-panel-accordion-panel .panel-header{
 	writing-mode: vertical-lr;
-	text-orientation: mixed;
+	text-orientation:sideways-right;
 }
 
 // Panel headings
@@ -41,6 +41,13 @@
 	position: relative;
 	transition: transform calc(var(--transTime)/1) cubic-bezier(.33,0,.02,.99);
 	padding:1em 0;
+	text-align: right;
+	--closeTrnsTo: translate(-100%, 0%);
+	--openTrnsFrom: translate(101%, 0%);
+}
+.is-vertical>.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading{
+	--closeTrnsTo: translate(0%, -100%);
+	--openTrnsFrom: translate(0%, 101%);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading *{
@@ -54,13 +61,13 @@
 .wp-block-accordion-panel-accordion-panel:is(
 	:hover, .is-panel-open
 ) .panel-header .panel-heading-close{
-	transform: translate(-100%, 0%);
+	transform: var(--closeTrnsTo);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open{
 	color: var(--panelHeadingColorOpen);
 	background-color: var(--panelBgColor);
-	transform: translate(101%, 0%);
+	transform: var(--openTrnsFrom);
 }
 .wp-block-accordion-panel-accordion-panel:is(
 	:hover, .is-panel-open
@@ -79,9 +86,17 @@
 	background-color: var(--panelBgColor);
 	flex-grow: 0;
 }
+.is-vertical>.wp-block-accordion-panel-accordion-panel .panel{
+	width: 100%;
+	height: 0px;
+	overflow-y: scroll;
+}
+
 .wp-block-accordion-panel-accordion-panel.is-panel-open .panel{
 	flex-grow: 1;
 }
+
+
 
 // Panel Content
 
@@ -96,32 +111,38 @@
 }
 
 // Accordion Rule
-
-.wp-block-accordion-panel-accordion-panel *:has(.accordionRule){
-	position: relative;
-}
 .wp-block-accordion-panel-accordion-panel .accordionRule{
 	--ruleWidth:2px;
 	position: absolute;
 	background-color: var(--ruleColor);
 	display: block;
 	z-index: 2;
+	height: 100%;
+	width: var(--ruleWidth) ;
+}
+.is-vertical>.wp-block-accordion-panel-accordion-panel .accordionRule{
+	height: var(--ruleWidth);
+	width: 100%;
 }
 
-.wp-block-accordion-panel-accordion-panel .accordionRule:is(
-	.accordionRule-left, .accordionRule-right
-){
-	top: 0px;
-	height: 100%;
-	width: var(--ruleWidth);
-}
-.accordionRule.accordionRule-left{
+
+.accordionRule.accordionRule-start{
 	left: 0px;
-	transform: translate(-50%);
+	transform: translate(-50%, 0%);
 }
-.wp-block-accordion-panel-accordion-panel:last-child .accordionRule-right{
-	right: 0%;
-	transform: translate(50%);
+.accordionRule.accordionRule-end{
+	right: 0px;
+	transform: translate(50%, 0%);
 }
+
+.is-vertical>.wp-block-accordion-panel-accordion-panel .accordionRule.accordionRule-start{
+	top: 0px;
+	transform: translate(0%, -50%);
+}
+.is-vertical>.wp-block-accordion-panel-accordion-panel .accordionRule.accordionRule-end{
+	bottom: 0%;
+	transform: translate(0%, 50%);
+}
+
 
 

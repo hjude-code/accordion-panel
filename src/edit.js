@@ -93,11 +93,11 @@ export default function Edit({attributes, setAttributes}) {
 				</Panel>
 			</InspectorControls>
 			<div class="panel-header">
-				<span class="accordionRule accordionRule-left"></span>
+				<span class="accordionRule accordionRule-start"></span>
 				<span class="panel-headings">
 						<span class="panel-heading"><h2 >{attributes.panelHeading}</h2></span>
 				</span>
-				<span class="accordionRule accordionRule-right"></span>
+				<span class="accordionRule accordionRule-end"></span>
 			</div>
 			<div class="panel">
 				<div class="panel-content">
