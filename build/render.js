@@ -33,6 +33,11 @@ accordionGroups.forEach(accordionGroup => {
     });
   });
 });
+window.addEventListener('resize', () => {
+  accordionGroups.forEach(accordionGroup => {
+    calculatePanelSizes(accordionGroup);
+  });
+});
 /******/ })()
 ;
 //# sourceMappingURL=render.js.map

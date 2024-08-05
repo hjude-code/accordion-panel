@@ -6,7 +6,6 @@ function calculatePanelSizes(accordionGroup){
     let headersW = 0
     let headersH = 0
 
-
     const accordionPanelHeaders = accordionGroup.querySelectorAll('.wp-block-accordion-panel-accordion-panel .panel-header')
     accordionPanelHeaders.forEach((panelHeader)=>{
         headersW += panelHeader.getBoundingClientRect().width
@@ -41,3 +40,8 @@ accordionGroups.forEach((accordionGroup)=>{
 
 })
 
+window.addEventListener('resize', ()=>{
+    accordionGroups.forEach((accordionGroup)=>{
+        calculatePanelSizes(accordionGroup)
+    })
+})
