@@ -27,7 +27,7 @@
     "inserter": true
   },
   "attributes": {
-    "panel-heading": {
+    "panelHeading": {
       "type": "string",
       "default": "Panel Heading"
     }

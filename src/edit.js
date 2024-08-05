@@ -11,7 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import { PanelRow, PanelBody, SelectControl, TextControl, ColorPicker} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,13 +30,24 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({attributes, setAttributes}) {
 	return (
 		<div { ...useBlockProps() }>
+			<InspectorControls>
+				<PanelBody>
+					<PanelRow>
+						<TextControl
+							label="Panel Heading"
+							value={ attributes.panelHeading }
+							onChange={ ( newHeading ) => setAttributes({panelHeading:newHeading}) }
+						/>
+					</PanelRow>
+				</PanelBody>
+			</InspectorControls>
 			<div class="panel-header">
 				<span class="accordionRule accordionRule-left"></span>
-				<h2 class="panel-heading panel-heading-close">Panel Heading</h2>
-				<h2 class="panel-heading panel-heading-open">Panel Heading</h2>
+				<h2 class="panel-heading panel-heading-close">{attributes.panelHeading}</h2>
+				<h2 class="panel-heading panel-heading-open">{attributes.panelHeading}</h2>
 				<span class="accordionRule accordionRule-right"></span>
 			</div>
 			<div class="panel-content">
