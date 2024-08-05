@@ -19,6 +19,9 @@ $styleString .= "--panelHeadingColorOpen: $panelHeadingColorOpen; ";
 $ruleColor = $attributes['ruleColor'];
 $styleString .= "--ruleColor: $ruleColor; ";
 
+$headerAlignment = $attributes['headerAlignment'];
+$styleString .= "--headerAlignment: $headerAlignment; ";
+
 
 
  $wrapper_attributes = get_block_wrapper_attributes([

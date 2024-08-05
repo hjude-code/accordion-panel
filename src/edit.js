@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps, InnerBlocks, InspectorControls, useSetting } from '@wordpress/block-editor';
-import {Card, CardBody, CardHeader, Heading, CardMedia, PanelRow, Panel, PanelBody, PanelHeader, TextControl, ColorPicker, ColorPalette} from '@wordpress/components';
+import {PanelRow, Panel, PanelBody, TextControl, ColorPalette, SelectControl} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -37,6 +37,7 @@ export default function Edit({attributes, setAttributes}) {
 		'--panelHeadingColorClose': attributes.panelHeadingColorClose,
 		'--panelHeadingColorOpen': attributes.panelHeadingColorOpen,
 		'--panelBgColor': attributes.panelBgColor,
+		'--headerAlignment': attributes.headerAlignment,
 	}
 
 	return (
@@ -49,6 +50,15 @@ export default function Edit({attributes, setAttributes}) {
 								label="Panel Heading Text"
 								value={ attributes.panelHeading }
 								onChange={ ( newHeading ) => setAttributes({panelHeading:newHeading}) }
+							/>
+							<SelectControl
+								label="alignment"
+								value={attributes.headerAlignment}
+								options={[
+									{label:'start', value:'left'},
+									{label:'end', value:'right'}
+								]}
+								onChange={ ( newAlign ) => setAttributes({headerAlignment:newAlign}) }
 							/>
 						</PanelRow>
 					</PanelBody>

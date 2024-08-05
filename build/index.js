@@ -62,7 +62,8 @@ function Edit({
     '--ruleColor': attributes.ruleColor,
     '--panelHeadingColorClose': attributes.panelHeadingColorClose,
     '--panelHeadingColorOpen': attributes.panelHeadingColorOpen,
-    '--panelBgColor': attributes.panelBgColor
+    '--panelBgColor': attributes.panelBgColor,
+    '--headerAlignment': attributes.headerAlignment
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
@@ -74,14 +75,27 @@ function Edit({
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "Panel Heading",
           initialOpen: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
               label: "Panel Heading Text",
               value: attributes.panelHeading,
               onChange: newHeading => setAttributes({
                 panelHeading: newHeading
               })
-            })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+              label: "alignment",
+              value: attributes.headerAlignment,
+              options: [{
+                label: 'start',
+                value: 'left'
+              }, {
+                label: 'end',
+                value: 'right'
+              }],
+              onChange: newAlign => setAttributes({
+                headerAlignment: newAlign
+              })
+            })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "Panel Background Color",
@@ -315,7 +329,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"accordion-panel/accordion-panel","version":"0.1.0","title":"Accordion Panel","category":"design","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"position":{"sticky":true},"color":{"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true,"background":true},"renaming":true},"attributes":{"panelHeading":{"type":"string","default":"Panel Heading"},"ruleColor":{"type":"string","default":"#000000"},"panelHeadingColorClose":{"type":"string","default":"#ffffff"},"panelHeadingColorOpen":{"type":"string","default":"#000000"},"panelBgColor":{"type":"string","default":"#ffffff"}},"textdomain":"accordion-panel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./render.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"accordion-panel/accordion-panel","version":"0.1.0","title":"Accordion Panel","category":"design","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"position":{"sticky":true},"color":{"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true,"background":true},"renaming":true},"attributes":{"panelHeading":{"type":"string","default":"Panel Heading"},"ruleColor":{"type":"string","default":"#000000"},"panelHeadingColorClose":{"type":"string","default":"#ffffff"},"panelHeadingColorOpen":{"type":"string","default":"#000000"},"panelBgColor":{"type":"string","default":"#ffffff"},"headerAlignment":{"type":"string","default":"left"}},"textdomain":"accordion-panel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./render.js"}');
 
 /***/ })
 

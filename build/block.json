@@ -45,6 +45,10 @@
     "panelBgColor": {
       "type": "string",
       "default": "#ffffff"
+    },
+    "headerAlignment": {
+      "type": "string",
+      "default": "left"
     }
   },
   "textdomain": "accordion-panel",

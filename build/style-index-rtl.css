@@ -23,6 +23,7 @@
 .wp-block-accordion-panel-accordion-panel .panel-header {
   text-decoration: none;
   overflow: hidden;
+  position: relative;
 }
 
 :not(.is-vertical) > .wp-block-accordion-panel-accordion-panel .panel-header {
@@ -41,7 +42,7 @@
   position: relative;
   transition: transform calc(var(--transTime) / 1) cubic-bezier(0.33, 0, 0.02, 0.99);
   padding: 1em 0;
-  text-align: left;
+  text-align: var(--headerAlignment);
   --closeTrnsTo: translate(-100%, 0%);
   --openTrnsFrom: translate(101%, 0%);
 }
