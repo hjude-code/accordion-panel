@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks, InspectorControls, useSetting } from '@wordpress/block-editor';
+import { useBlockProps, RichText, InnerBlocks, InspectorControls, useSetting } from '@wordpress/block-editor';
 import {PanelRow, Panel, PanelBody, TextControl, ColorPalette, SelectControl} from '@wordpress/components';
 
 /**
@@ -39,6 +39,8 @@ export default function Edit({attributes, setAttributes}) {
 		'--panelBgColor': attributes.panelBgColor,
 		'--headerAlignment': attributes.headerAlignment,
 	}
+
+	const panelHeadingTag = `<${attributes.headingTagName}>${attributes.panelHeading}</${attributes.headingTagName}>`
 
 	return (
 		<div { ...useBlockProps({style: styleVars}) }>
@@ -105,7 +107,13 @@ export default function Edit({attributes, setAttributes}) {
 			<div class="panel-header">
 				<span class="accordionRule accordionRule-start"></span>
 				<span class="panel-headings">
-						<span class="panel-heading"><h2 >{attributes.panelHeading}</h2></span>
+						<span class="panel-heading">
+							<RichText
+								tagName={attributes.headingTagName}
+								value={attributes.panelHeading}
+								onChange={value => setAttributes({panelHeading: value})}		
+							/>
+						</span>
 				</span>
 				<span class="accordionRule accordionRule-end"></span>
 			</div>

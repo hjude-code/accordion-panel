@@ -49,6 +49,10 @@
     "headerAlignment": {
       "type": "string",
       "default": "left"
+    },
+    "headingTagName": {
+      "type": "string",
+      "default": "h2"
     }
   },
   "textdomain": "accordion-panel",

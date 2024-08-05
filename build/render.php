@@ -3,7 +3,9 @@
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
 
- $panelHeading = $attributes['panelHeading'];
+$headingTagName = $attributes['headingTagName'];
+
+ $panelHeading = "<$headingTagName>" . $attributes['panelHeading'] . "</$headingTagName>";
 
 $styleString = '';
 
@@ -27,6 +29,9 @@ $styleString .= "--headerAlignment: $headerAlignment; ";
  $wrapper_attributes = get_block_wrapper_attributes([
 	'style' => $styleString
 ]);
+
+
+
 ?>
 
 
@@ -35,8 +40,8 @@ $styleString .= "--headerAlignment: $headerAlignment; ";
 	<a class="panel-header">
 		<span class="accordionRule accordionRule-start"></span>
 		<span class="panel-headings">
-			<span class="panel-heading panel-heading-close"> <h2> <?php echo $panelHeading ?> </h2> </span>
-			<span class="panel-heading panel-heading-open"> <h2> <?php echo $panelHeading ?> </h2> </span>
+			<span class="panel-heading panel-heading-close"> <?php echo $panelHeading ?> </span>
+			<span class="panel-heading panel-heading-open"> <?php echo $panelHeading ?> </span>
 		</span>
 		<span class="accordionRule accordionRule-end"></span>
 	</a>
