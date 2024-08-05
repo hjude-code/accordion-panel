@@ -39,7 +39,7 @@
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading {
   grid-area: 1/1/1/1;
   position: relative;
-  transition: transform calc(var(--transTime) / 1) var(--transEase);
+  transition: transform calc(var(--transTime) / 1) cubic-bezier(0.33, 0, 0.02, 0.99);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading * {
