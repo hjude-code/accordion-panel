@@ -39,6 +39,30 @@
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading {
   grid-area: 1/1/1/1;
   position: relative;
+  transition: transform calc(var(--transTime) / 1) var(--transEase);
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading * {
+  color: inherit;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-close {
+  color: var(--panelHeadingColorClose);
+  transform: translate(0%, 0%);
+}
+
+.wp-block-accordion-panel-accordion-panel:is(:hover, .is-panel-open) .panel-header .panel-heading-close {
+  transform: translate(100%, 0%);
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header .panel-heading-open {
+  color: var(--panelHeadingColorOpen);
+  background-color: var(--panelBgColor);
+  transform: translate(-101%, 0%);
+}
+
+.wp-block-accordion-panel-accordion-panel:is(:hover, .is-panel-open) .panel-header .panel-heading-open {
+  transform: translate(0, 0%);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel {
@@ -72,6 +96,7 @@
   position: absolute;
   background-color: var(--ruleColor);
   display: block;
+  z-index: 2;
 }
 
 .wp-block-accordion-panel-accordion-panel .accordionRule:is(.accordionRule-left, .accordionRule-right) {

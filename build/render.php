@@ -32,9 +32,8 @@ $styleString .= "--ruleColor: $ruleColor; ";
 	<a class="panel-header">
 		<span class="accordionRule accordionRule-left"></span>
 		<span class="panel-headings">
-			<span class="panel-heading"> <h2> <?php echo $panelHeading ?> </h2> </span>
-			<span class="panel-heading"> <h2> <?php echo $panelHeading ?> </h2> </span>
-			<span class="panel-heading"> <h2> <?php echo $panelHeading ?> </h2> </span>
+			<span class="panel-heading panel-heading-close"> <h2> <?php echo $panelHeading ?> </h2> </span>
+			<span class="panel-heading panel-heading-open"> <h2> <?php echo $panelHeading ?> </h2> </span>
 		</span>
 		<span class="accordionRule accordionRule-right"></span>
 	</a>
