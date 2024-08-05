@@ -77,11 +77,33 @@ function Edit({
           title: "Panel Heading",
           initialOpen: true,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-              label: "Panel Heading Text",
-              value: attributes.panelHeading,
-              onChange: newHeading => setAttributes({
-                panelHeading: newHeading
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+              label: "Panel Heading Tagname",
+              value: attributes.headingTagName,
+              options: [{
+                label: 'h1',
+                value: 'h1'
+              }, {
+                label: 'h2',
+                value: 'h2'
+              }, {
+                label: 'h3',
+                value: 'h3'
+              }, {
+                label: 'h4',
+                value: 'h4'
+              }, {
+                label: 'h5',
+                value: 'h5'
+              }, {
+                label: 'h6',
+                value: 'h6'
+              }, {
+                label: 'p',
+                value: 'p'
+              }],
+              onChange: newHeadingTag => setAttributes({
+                headingTagName: newHeadingTag
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
               label: "alignment",

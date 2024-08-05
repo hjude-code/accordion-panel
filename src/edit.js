@@ -48,10 +48,19 @@ export default function Edit({attributes, setAttributes}) {
 				<Panel header="Controls">
 					<PanelBody title="Panel Heading" initialOpen={ true }>
 						<PanelRow>
-							<TextControl
-								label="Panel Heading Text"
-								value={ attributes.panelHeading }
-								onChange={ ( newHeading ) => setAttributes({panelHeading:newHeading}) }
+							<SelectControl
+								label="Panel Heading Tagname"
+								value={ attributes.headingTagName }
+								options={[
+									{label:'h1', value:'h1'},
+									{label:'h2', value:'h2'},
+									{label:'h3', value:'h3'},
+									{label:'h4', value:'h4'},
+									{label:'h5', value:'h5'},
+									{label:'h6', value:'h6'},
+									{label:'p', value:'p'},
+								]}
+								onChange={ ( newHeadingTag ) => setAttributes({headingTagName:newHeadingTag}) }
 							/>
 							<SelectControl
 								label="alignment"
