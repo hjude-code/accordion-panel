@@ -58,9 +58,13 @@
       "type": "string",
       "default": "100vh"
     },
-    "panelHeaderPadding": {
+    "panelHeaderPad": {
+      "type": "number",
+      "default": 1
+    },
+    "headerPadVal": {
       "type": "string",
-      "default": "0px"
+      "default": "em"
     }
   },
   "textdomain": "accordion-panel",

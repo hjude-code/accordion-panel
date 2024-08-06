@@ -27,6 +27,9 @@ $styleString .= "--headerAlignment: $headerAlignment; ";
 $maxPanelHeight = $attributes['maxPanelHeight'];
 $styleString .= "--maxPanelHeight: $maxPanelHeight; ";
 
+$panelHeaderPad = $attributes['panelHeaderPad'] . $attributes['headerPadVal'];
+$styleString .= "--panelHeaderPad: $panelHeaderPad; ";
+
 
 
  $wrapper_attributes = get_block_wrapper_attributes([

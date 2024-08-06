@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps, RichText, InnerBlocks, InspectorControls, useSetting } from '@wordpress/block-editor';
-import {PanelRow, Panel, PanelBody, TextControl, ColorPalette, SelectControl} from '@wordpress/components';
+import {PanelRow, Panel, PanelBody, ColorPalette, SelectControl, RangeControl} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -38,7 +38,8 @@ export default function Edit({attributes, setAttributes}) {
 		'--panelHeadingColorOpen': attributes.panelHeadingColorOpen,
 		'--panelBgColor': attributes.panelBgColor,
 		'--headerAlignment': attributes.headerAlignment,
-		'--maxPanelHeight': attributes.maxPanelHeight
+		'--maxPanelHeight': attributes.maxPanelHeight,
+		'--panelHeaderPad': attributes.panelHeaderPad + attributes.headerPadVal,
 	}
 
 	const panelHeadingTag = `<${attributes.headingTagName}>${attributes.panelHeading}</${attributes.headingTagName}>`
@@ -71,6 +72,27 @@ export default function Edit({attributes, setAttributes}) {
 									{label:'end', value:'right'}
 								]}
 								onChange={ ( newAlign ) => setAttributes({headerAlignment:newAlign}) }
+							/>
+						</PanelRow>
+					</PanelBody>
+					<PanelBody title="Header Padding" initialOpen={ false }>
+						<PanelRow>
+							<RangeControl
+								label='Header Padding'
+								value={attributes.panelHeaderPad}
+								onChange={(value) => setAttributes({panelHeaderPad:value}) }
+							/>
+							<SelectControl
+								label="value type"
+								value={ attributes.headerPadVal }
+								options={[
+									{label:'px', value:'px'},
+									{label:'rem', value:'rem'},
+									{label:'em', value:'em'},
+									{label:'vh', value:'vh'},
+									{label:'vw', value:'vw'},
+								]}
+								onChange={ ( newHeaderPadVal ) => setAttributes({headerPadVal:newHeaderPadVal}) }
 							/>
 						</PanelRow>
 					</PanelBody>

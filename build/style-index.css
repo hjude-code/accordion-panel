@@ -40,7 +40,7 @@
   grid-area: 1/1/1/1;
   position: relative;
   transition: transform calc(var(--transTime) / 1) cubic-bezier(0.33, 0, 0.02, 0.99);
-  padding: 1em 0;
+  padding: var(--panelHeaderPad) 0;
   text-align: var(--headerAlignment);
   --closeTrnsTo: translate(-100%, 0%);
   --openTrnsFrom: translate(101%, 0%);
@@ -49,6 +49,7 @@
 .is-vertical > .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading {
   --closeTrnsTo: translate(0%, -100%);
   --openTrnsFrom: translate(0%, 101%);
+  padding: 0 var(--panelHeaderPad);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading * {
@@ -105,40 +106,6 @@
   flex-grow: 1;
 }
 
-.wp-block-accordion-panel-accordion-panel .accordionRule {
-  --ruleWidth:4px;
-  display: none;
-  position: absolute;
-  background-color: var(--ruleColor);
-  z-index: 2;
-  height: 100%;
-  width: var(--ruleWidth);
-  --ruleInset:calc(var(--ruleWidth)/-2);
-}
-
-.is-vertical > .wp-block-accordion-panel-accordion-panel .accordionRule {
-  height: var(--ruleWidth);
-  width: 100%;
-}
-
-.accordionRule.accordionRule-start {
-  left: var(--ruleInset);
-}
-
-.accordionRule.accordionRule-end {
-  right: var(--ruleInset);
-}
-
-.is-vertical > .wp-block-accordion-panel-accordion-panel .accordionRule.accordionRule-start {
-  left: 0;
-  top: var(--ruleInset);
-}
-
-.is-vertical > .wp-block-accordion-panel-accordion-panel .accordionRule.accordionRule-end {
-  right: 0px;
-  bottom: var(--ruleInset);
-}
-
 .wp-block-accordion-panel-accordion-panel .panel-header::before,
 .wp-block-accordion-panel-accordion-panel .panel-headings::after {
   content: "";
@@ -146,16 +113,16 @@
   position: absolute;
   background-color: var(--ruleColor);
   --ruleWidth:4px;
-  width: 100%;
-  height: var(--ruleWidth);
   left: 0px;
   z-index: 10;
-}
-
-.wp-block-accordion-panel-accordion-panel .panel-header::before,
-.wp-block-accordion-panel-accordion-panel .panel-headings::after {
   width: var(--ruleWidth);
   height: 100%;
+}
+
+.is-vertical > .wp-block-accordion-panel-accordion-panel .panel-header::before,
+.is-vertical > .wp-block-accordion-panel-accordion-panel .panel-headings::after {
+  width: 100%;
+  height: var(--ruleWidth);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header::before {

@@ -64,7 +64,8 @@ function Edit({
     '--panelHeadingColorOpen': attributes.panelHeadingColorOpen,
     '--panelBgColor': attributes.panelBgColor,
     '--headerAlignment': attributes.headerAlignment,
-    '--maxPanelHeight': attributes.maxPanelHeight
+    '--maxPanelHeight': attributes.maxPanelHeight,
+    '--panelHeaderPad': attributes.panelHeaderPad + attributes.headerPadVal
   };
   const panelHeadingTag = `<${attributes.headingTagName}>${attributes.panelHeading}</${attributes.headingTagName}>`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -118,6 +119,40 @@ function Edit({
               }],
               onChange: newAlign => setAttributes({
                 headerAlignment: newAlign
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+          title: "Header Padding",
+          initialOpen: false,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+              label: "Header Padding",
+              value: attributes.panelHeaderPad,
+              onChange: value => setAttributes({
+                panelHeaderPad: value
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+              label: "value type",
+              value: attributes.headerPadVal,
+              options: [{
+                label: 'px',
+                value: 'px'
+              }, {
+                label: 'rem',
+                value: 'rem'
+              }, {
+                label: 'em',
+                value: 'em'
+              }, {
+                label: 'vh',
+                value: 'vh'
+              }, {
+                label: 'vw',
+                value: 'vw'
+              }],
+              onChange: newHeaderPadVal => setAttributes({
+                headerPadVal: newHeaderPadVal
               })
             })]
           })
@@ -353,7 +388,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"accordion-panel/accordion-panel","version":"0.1.0","title":"Accordion Panel","category":"design","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"position":{"sticky":true},"color":{"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true,"background":true},"renaming":true},"attributes":{"panelHeading":{"type":"string","default":"Panel Heading"},"ruleColor":{"type":"string","default":"#000000"},"panelHeadingColorClose":{"type":"string","default":"#ffffff"},"panelHeadingColorOpen":{"type":"string","default":"#000000"},"panelBgColor":{"type":"string","default":"#ffffff"},"headerAlignment":{"type":"string","default":"left"},"headingTagName":{"type":"string","default":"h2"},"maxPanelHeight":{"type":"string","default":"100vh"},"panelHeaderPadding":{"type":"string","default":"0px"}},"textdomain":"accordion-panel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./render.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"accordion-panel/accordion-panel","version":"0.1.0","title":"Accordion Panel","category":"design","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"position":{"sticky":true},"color":{"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true,"background":true},"renaming":true},"attributes":{"panelHeading":{"type":"string","default":"Panel Heading"},"ruleColor":{"type":"string","default":"#000000"},"panelHeadingColorClose":{"type":"string","default":"#ffffff"},"panelHeadingColorOpen":{"type":"string","default":"#000000"},"panelBgColor":{"type":"string","default":"#ffffff"},"headerAlignment":{"type":"string","default":"left"},"headingTagName":{"type":"string","default":"h2"},"maxPanelHeight":{"type":"string","default":"100vh"},"panelHeaderPad":{"type":"number","default":1},"headerPadVal":{"type":"string","default":"em"}},"textdomain":"accordion-panel","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./render.js"}');
 
 /***/ })
 
