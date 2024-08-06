@@ -30,6 +30,7 @@
 
 .wp-block-accordion-panel-accordion-panel:is(.is-selected, :has(.is-selected)) .panel-headings .panel-heading {
   color: var(--panelHeadingColorOpen);
+  background-color: var(--panelBgColor);
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-content {
