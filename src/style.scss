@@ -36,7 +36,7 @@
 	position: relative;
 	transition:transform calc(var(--transTime)/1) cubic-bezier(.33,0,.02,.99);
 	padding:0 var(--panelHeaderPad);
-	text-align: var(--headerAlignment);
+	text-align: inherit;
 	--closeTrnsTo: translate(0%, -100%);
 	--openTrnsFrom: translate(0%, 101%);
 }
@@ -75,6 +75,7 @@
 	transition:flex-grow var(--transTime) var(--transEase);
 	background-color: var(--panelBgColor);
 	flex-grow: 0;
+	text-align: left;
 }
 .wp-block-accordion-panel-accordion-panel.is-panel-open .panel{
 	flex-grow: 1;

@@ -37,7 +37,6 @@ export default function Edit({attributes, setAttributes}) {
 		'--panelHeadingColorClose': attributes.panelHeadingColorClose,
 		'--panelHeadingColorOpen': attributes.panelHeadingColorOpen,
 		'--panelBgColor': attributes.panelBgColor,
-		'--headerAlignment': attributes.headerAlignment,
 		'--maxPanelHeight': attributes.maxPanelHeight,
 		'--panelHeaderPad': attributes.panelHeaderPad + attributes.headerPadVal,
 	}
@@ -63,15 +62,6 @@ export default function Edit({attributes, setAttributes}) {
 									{label:'p', value:'p'},
 								]}
 								onChange={ ( newHeadingTag ) => setAttributes({headingTagName:newHeadingTag}) }
-							/>
-							<SelectControl
-								label="alignment"
-								value={attributes.headerAlignment}
-								options={[
-									{label:'start', value:'left'},
-									{label:'end', value:'right'}
-								]}
-								onChange={ ( newAlign ) => setAttributes({headerAlignment:newAlign}) }
 							/>
 						</PanelRow>
 					</PanelBody>

@@ -46,10 +46,6 @@
 			"type":"string",
 			"default":"#ffffff"
 		},
-		"headerAlignment":{
-			"type":"string",
-			"default":"left"
-		},
 		"headingTagName":{
 			"type":"string",
 			"default":"h2"

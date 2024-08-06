@@ -21,9 +21,6 @@ $styleString .= "--panelHeadingColorOpen: $panelHeadingColorOpen; ";
 $ruleColor = $attributes['ruleColor'];
 $styleString .= "--ruleColor: $ruleColor; ";
 
-$headerAlignment = $attributes['headerAlignment'];
-$styleString .= "--headerAlignment: $headerAlignment; ";
-
 $maxPanelHeight = $attributes['maxPanelHeight'];
 $styleString .= "--maxPanelHeight: $maxPanelHeight; ";
 
