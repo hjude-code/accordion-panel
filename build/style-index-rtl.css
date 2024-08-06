@@ -9,7 +9,6 @@
   transition: flex-grow var(--transTime) var(--transEase);
   position: relative;
   align-self: stretch;
-  overflow: hidden;
 }
 
 .is-vertical > .wp-block-accordion-panel-accordion-panel {
@@ -22,7 +21,6 @@
 
 .wp-block-accordion-panel-accordion-panel .panel-header {
   text-decoration: none;
-  overflow: hidden;
   position: relative;
 }
 
@@ -35,6 +33,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  overflow: hidden;
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading {
@@ -108,9 +107,9 @@
 
 .wp-block-accordion-panel-accordion-panel .accordionRule {
   --ruleWidth:4px;
+  display: none;
   position: absolute;
   background-color: var(--ruleColor);
-  display: block;
   z-index: 2;
   height: 100%;
   width: var(--ruleWidth);
@@ -138,4 +137,42 @@
 .is-vertical > .wp-block-accordion-panel-accordion-panel .accordionRule.accordionRule-end {
   left: 0px;
   bottom: var(--ruleInset);
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header::before,
+.wp-block-accordion-panel-accordion-panel .panel-headings::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--ruleColor);
+  --ruleWidth:4px;
+  width: 100%;
+  height: var(--ruleWidth);
+  right: 0px;
+  z-index: 10;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header::before,
+.wp-block-accordion-panel-accordion-panel .panel-headings::after {
+  width: var(--ruleWidth);
+  height: 100%;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-header::before {
+  right: calc(-1 * var(--ruleWidth));
+}
+
+.is-vertical > .wp-block-accordion-panel-accordion-panel .panel-header::before {
+  top: calc(-1 * var(--ruleWidth));
+  right: 0px;
+}
+
+.wp-block-accordion-panel-accordion-panel .panel-headings::after {
+  left: 0px;
+  right: auto;
+}
+
+.is-vertical > .wp-block-accordion-panel-accordion-panel .panel-headings::after {
+  bottom: 0;
+  left: auto;
 }
