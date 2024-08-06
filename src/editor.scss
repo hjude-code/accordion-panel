@@ -9,7 +9,7 @@
  }
 
  .wp-block-accordion-panel-accordion-panel:is(
-	.is-selected, :has(.is-selected)
+	.is-selected, .has-child-selected
 ){
 	flex-grow:1;
 	background-color: var(--panelBgColor);
@@ -17,8 +17,7 @@
 
 
  .wp-block-accordion-panel-accordion-panel::before{
-	display: none !important;
-	
+	display: none !important;	
 }
 
 .wp-block-accordion-panel-accordion-panel .panel-headings{
@@ -56,5 +55,5 @@
 	width: 100%;
 	transition: 0s !important;
 	display: block;
-
+	flex-grow: 1;
 }

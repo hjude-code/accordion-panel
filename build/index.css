@@ -10,7 +10,7 @@
   transition: 0s !important;
 }
 
-.wp-block-accordion-panel-accordion-panel:is(.is-selected, :has(.is-selected)) {
+.wp-block-accordion-panel-accordion-panel:is(.is-selected, .has-child-selected) {
   flex-grow: 1;
   background-color: var(--panelBgColor);
 }
@@ -45,6 +45,7 @@
   width: 100%;
   transition: 0s !important;
   display: block;
+  flex-grow: 1;
 }
 
 /*# sourceMappingURL=index.css.map*/
