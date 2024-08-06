@@ -34,7 +34,7 @@
 .wp-block-accordion-panel-accordion-panel .panel-header .panel-heading{
 	grid-area: 1/1/1/1;
 	position: relative;
-	transition: transform calc(var(--transTime)/1) cubic-bezier(.33,0,.02,.99);
+	transition:transform calc(var(--transTime)/1) cubic-bezier(.33,0,.02,.99);
 	padding:0 var(--panelHeaderPad);
 	text-align: var(--headerAlignment);
 	--closeTrnsTo: translate(0%, -100%);
@@ -76,7 +76,7 @@
 	overflow-y: scroll;
 	max-height: var(--maxPanelHeight);
 	z-index: 2;
-	transition: var(--transTime) var(--transEase);
+	transition:flex-grow var(--transTime) var(--transEase);
 	background-color: var(--panelBgColor);
 	flex-grow: 0;
 }

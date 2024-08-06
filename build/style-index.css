@@ -69,7 +69,7 @@
   overflow-y: scroll;
   max-height: var(--maxPanelHeight);
   z-index: 2;
-  transition: var(--transTime) var(--transEase);
+  transition: flex-grow var(--transTime) var(--transEase);
   background-color: var(--panelBgColor);
   flex-grow: 0;
 }
