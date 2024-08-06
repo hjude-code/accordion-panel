@@ -57,6 +57,10 @@
 		"maxPanelHeight":{
 			"type":"string",
 			"default":"100vh"
+		},
+		"panelHeaderPadding":{
+			"type":"string",
+			"default":"0px"
 		}
 	},
 	"textdomain": "accordion-panel",
