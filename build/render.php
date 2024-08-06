@@ -41,12 +41,10 @@ $styleString .= "--maxPanelHeight: $maxPanelHeight; ";
 
 <div <?php echo $wrapper_attributes ?>>
 	<a class="panel-header">
-		<span class="accordionRule accordionRule-start"></span>
 		<span class="panel-headings">
 			<span class="panel-heading panel-heading-close"> <?php echo $panelHeading ?> </span>
 			<span class="panel-heading panel-heading-open"> <?php echo $panelHeading ?> </span>
 		</span>
-		<span class="accordionRule accordionRule-end"></span>
 	</a>
 	<div class="panel">
 		<div class="panel-content">

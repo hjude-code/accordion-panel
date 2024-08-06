@@ -115,7 +115,6 @@ export default function Edit({attributes, setAttributes}) {
 				</Panel>
 			</InspectorControls>
 			<div class="panel-header">
-				<span class="accordionRule accordionRule-start"></span>
 				<span class="panel-headings">
 						<span class="panel-heading">
 							<RichText
@@ -125,7 +124,6 @@ export default function Edit({attributes, setAttributes}) {
 							/>
 						</span>
 				</span>
-				<span class="accordionRule accordionRule-end"></span>
 			</div>
 			<div class="panel">
 				<div class="panel-content">
